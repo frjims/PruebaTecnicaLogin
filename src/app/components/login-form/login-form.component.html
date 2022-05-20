@@ -1,0 +1,49 @@
+<link rel="stylesheet" media="(max-width: 960px)"/>
+<div class="container-fluid">
+<!-- <img src="assets\images\logo.jpg"> -->
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="login-card">    
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <span matPrefix>
+              <mat-icon>person</mat-icon>
+            </span>
+            <input type="email" matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="addressForm.controls['email'].hasError('email')">
+              Email is <strong>incorrect</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">            
+            <mat-icon matPrefix>padlock</mat-icon>            
+            <input type="password" matInput placeholder="Contraseña" formControlName="password">
+            <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="addressForm.controls['password'].hasError('minlength')">
+              Password is <strong>has been length 5 characters almost</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>                  
+      <div class="row">
+        <div class="col">
+          Recordar
+          <mat-slide-toggle formControlName="record">           
+          </mat-slide-toggle>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="button-card">
+      <button mat-raised-button color="primary" type="submit">Acceder</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
