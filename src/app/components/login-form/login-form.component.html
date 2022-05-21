@@ -1,15 +1,14 @@
 <link rel="stylesheet" media="(max-width: 960px)"/>
 <div class="container-fluid">
-<!-- <img src="assets\images\logo.jpg"> -->
+  .
+<img class="logo-center" src="assets\images\logo.jpg">
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
   <mat-card class="login-card">    
     <mat-card-content>
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <span matPrefix>
-              <mat-icon>person</mat-icon>
-            </span>
+            <mat-icon matPrefix>person</mat-icon>            
             <input type="email" matInput placeholder="Email" formControlName="email">
             <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
               Email is <strong>required</strong>
@@ -22,8 +21,8 @@
       </div>      
       <div class="row">
         <div class="col">
-          <mat-form-field class="full-width">            
-            <mat-icon matPrefix>padlock</mat-icon>            
+          <mat-form-field class="full-width">       
+            <mat-icon class="icon-padlock" matPrefix>padlock</mat-icon>            
             <input type="password" matInput placeholder="Contraseña" formControlName="password">
             <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
               Password is <strong>required</strong>
@@ -33,17 +32,16 @@
             </mat-error>
           </mat-form-field>
         </div>
-      </div>                  
+      </div>          
       <div class="row">
         <div class="col">
           Recordar
-          <mat-slide-toggle formControlName="record">           
-          </mat-slide-toggle>
+          <mat-slide-toggle formControlName="record"></mat-slide-toggle>
         </div>
       </div>
     </mat-card-content>
     <mat-card-actions class="button-card">
-      <button mat-raised-button color="primary" type="submit">Acceder</button>
+      <button class="button" mat-raised-button color="primary" type="submit">Acceder</button>
     </mat-card-actions>
   </mat-card>
 </form>
