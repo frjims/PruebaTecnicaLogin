@@ -5,39 +5,29 @@
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
   <mat-card class="login-card">    
     <mat-card-content>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <mat-icon matPrefix>person</mat-icon>            
-            <input type="email" matInput placeholder="Email" formControlName="email">
-            <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
-              Email is <strong>required</strong>
-            </mat-error>
-            <mat-error *ngIf="addressForm.controls['email'].hasError('email')">
-              Email is <strong>incorrect</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>      
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">       
-            <mat-icon class="icon-padlock" matPrefix>padlock</mat-icon>            
-            <input type="password" matInput placeholder="Contraseña" formControlName="password">
-            <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
-              Password is <strong>required</strong>
-            </mat-error>
-            <mat-error *ngIf="addressForm.controls['password'].hasError('minlength')">
-              Password is <strong>has been length 5 characters almost</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>          
-      <div class="row">
-        <div class="col">
-          Recordar
-          <mat-slide-toggle formControlName="record"></mat-slide-toggle>
-        </div>
+      <mat-form-field class="full-width">
+        <mat-icon matPrefix>person</mat-icon>            
+        <input type="email" matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="addressForm.controls['email'].hasError('email')">
+          Email is <strong>incorrect</strong>
+        </mat-error>
+      </mat-form-field>        
+      <mat-form-field class="full-width">       
+        <mat-icon class="icon-padlock" matPrefix>padlock</mat-icon>            
+        <input type="password" matInput placeholder="Contraseña" formControlName="password">
+        <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="addressForm.controls['password'].hasError('minlength')">
+          Password is <strong>has been length 5 characters almost</strong>
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <span class="span-record">Recordar</span>
+        <mat-slide-toggle class="slide-toggle" formControlName="record"></mat-slide-toggle>
       </div>
     </mat-card-content>
     <mat-card-actions class="button-card">
